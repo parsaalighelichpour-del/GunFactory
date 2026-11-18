@@ -1,26 +1,58 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>کارگاه سفارشی‌سازی | نسخه اولیه</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>کارگاه تفنگ‌سازی | نسخه پیکسلی</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#101827,#202d48);color:#f4f7ff;font-family:Tahoma,Arial,sans-serif}header{padding:20px;text-align:center;background:#17243b;border-bottom:1px solid #405474}h1{margin:0 0 8px;font-size:24px}.sub{color:#aebfda;font-size:13px}.wrap{max-width:950px;margin:auto;padding:16px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.pill,.panel{background:#1c2b45;border:1px solid #405474;border-radius:16px;padding:14px}.pill{flex:1;min-width:120px;text-align:center}.layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel h2{font-size:17px;margin:0 0 12px}.preview{height:210px;border-radius:14px;background:radial-gradient(circle,#344b70,#17243b);display:grid;place-items:center;margin-bottom:12px;overflow:hidden}.bot{width:130px;height:110px;background:var(--paint,#35a7c8);border:5px solid #d5e8f4;border-radius:28px;position:relative;box-shadow:0 12px 30px #0006}.bot:before{content:"";position:absolute;top:25px;left:23px;width:18px;height:18px;border-radius:50%;background:#14243b;box-shadow:60px 0 #14243b}.bot:after{content:"";position:absolute;bottom:18px;left:42px;width:38px;height:8px;border-radius:8px;background:#14243b}.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.swatch,button,select{border:0;border-radius:10px;padding:11px;font-weight:bold;cursor:pointer}.swatch{height:42px;border:2px solid #ffffff55}.blue{background:#35a7c8}.red{background:#e65d67}.gold{background:#e5b84d}.green{background:#53b98a}.purple{background:#9c78df}.dark{background:#64748b}button{background:#4b91df;color:white}button:disabled{opacity:.4;cursor:not-allowed}.secondary{background:#344966}.item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #344966;gap:8px}.muted{color:#aebfda;font-size:12px}.notice{margin-top:12px;color:#bcd0ec;font-size:12px;line-height:1.8}.message{min-height:24px;color:#8fe2b5;margin-top:10px;font-size:13px}@media(max-width:650px){.layout{grid-template-columns:1fr}.wrap{padding:12px}}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+:root{--bg:#101827;--panel:#1d2b40;--line:#344a66;--gold:#ffd166;--mint:#65e6b4}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#243b55,#0d1522 70%);color:#f3f6fc;font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh}
+header{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;background:#172438;border-bottom:3px solid #3b526d}
+h1{font-size:19px;margin:0;color:var(--gold)}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#263b53;border:2px solid var(--line);padding:5px 10px;border-radius:8px;font-weight:900;font-size:13px}
+main{max-width:1050px;margin:auto;padding:12px;display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:12px}
+.gamebox,.side{background:#172438;border:3px solid #344a66;border-radius:12px;padding:10px;box-shadow:0 8px 25px #0005}
+canvas{display:block;width:100%;height:auto;aspect-ratio:9/6;background:#62865c;border:3px solid #0b1420;border-radius:5px;image-rendering:pixelated;touch-action:none}
+.hint{text-align:center;color:#b9c8dc;font-size:12px;margin:8px 0 0}
+.side h2{font-size:16px;color:var(--gold);margin:2px 0 10px}.weapon{background:#263b53;border:2px solid #405976;border-radius:9px;padding:10px;margin-bottom:9px}.weapon strong{display:block}.weapon small{color:#b9c8dc}
+button{font:700 13px Vazirmatn,Tahoma;cursor:pointer;border:0;border-radius:8px;padding:9px 10px;background:#ffd166;color:#24202a;margin:4px 2px;min-height:38px}button.secondary{background:#395574;color:#fff}button:disabled{opacity:.4;cursor:not-allowed}.actions{display:flex;flex-wrap:wrap;gap:4px}.log{font-size:12px;line-height:1.8;color:#c7d4e5;min-height:48px;margin-top:8px}
+.controls{display:flex;justify-content:space-between;align-items:end;margin-top:8px}.pad{display:grid;grid-template-columns:38px 38px 38px;grid-template-rows:34px 34px 34px;gap:3px;direction:ltr}.pad button{margin:0;padding:0;background:#304963;color:white;font-size:16px}.pad .up{grid-column:2}.pad .left{grid-column:1;grid-row:2}.pad .down{grid-column:2;grid-row:2}.pad .right{grid-column:3;grid-row:2}.interact{background:var(--mint);color:#10231c}
+@media(max-width:740px){main{grid-template-columns:1fr}.side{order:2}header{align-items:flex-start}h1{font-size:16px}}
 </style></head>
 <body>
-<header><h1>🛠️ کارگاه سفارشی‌سازی</h1><div class="sub">نسخه اولیه — طراحی ظاهری ربات‌ها و فروش به مشتری‌ها</div></header>
-<main class="wrap">
-<div class="stats"><div class="pill">💰 سکه‌ها<br><b id="coins">250</b></div><div class="pill">📦 سفارش‌های فروخته‌شده<br><b id="sold">0</b></div><div class="pill">⭐ اعتبار کارگاه<br><b id="rep">0</b></div></div>
-<div class="layout">
-<section class="panel"><h2>🎨 میز طراحی</h2><div class="preview"><div class="bot" id="bot"></div></div><div class="muted">رنگ بدنه را انتخاب کن:</div><div class="controls" style="margin:10px 0 14px"><button class="swatch blue" aria-label="آبی" onclick="paint('#35a7c8', 'آبی')"></button><button class="swatch red" aria-label="قرمز" onclick="paint('#e65d67','قرمز')"></button><button class="swatch gold" aria-label="طلایی" onclick="paint('#e5b84d','طلایی')"></button><button class="swatch green" aria-label="سبز" onclick="paint('#53b98a','سبز')"></button><button class="swatch purple" aria-label="بنفش" onclick="paint('#9c78df','بنفش')"></button><button class="swatch dark" aria-label="خاکستری" onclick="paint('#64748b','خاکستری')"></button></div><div class="item"><span>✨ برچسب ستاره‌ای</span><button class="secondary" id="sticker" onclick="buySticker()">خرید 40 سکه</button></div><div class="item"><span>💎 قاب درخشان</span><button class="secondary" id="shine" onclick="buyShine()">خرید 70 سکه</button></div><div class="message" id="msg"></div></section>
-<section class="panel"><h2>🤖 مشتری‌های کارگاه</h2><p class="muted">ربات نمایشی‌ات را با سلیقه خودت طراحی کن و به مشتری مجازی بفروش.</p><div class="item"><div><b>مشتری: آریا</b><div class="muted">ربات رنگی و ساده می‌خواهد</div></div><b>+100 🪙</b></div><div class="item"><div><b>مشتری: نیما</b><div class="muted">طرح ویژه با برچسب یا قاب درخشان</div></div><b>+180 🪙</b></div><button style="width:100%;margin-top:14px" onclick="sell()">فروش طرح فعلی</button><div class="notice">راهنما: رنگ و تزئینات را انتخاب کن، سپس دکمه فروش را بزن. این نسخه آزمایشی است و پیشرفت بازی روی همین مرورگر ذخیره می‌شود.</div></section>
-</div></main>
+<header><h1>🛠️ کارگاه تفنگ‌سازی پیکسلی</h1><div class="stats"><span class="pill">🪙 پول: <b id="coins">180</b></span><span class="pill">📦 فروش: <b id="sales">0</b></span><span class="pill">⭐ اعتبار: <b id="rep">0</b></span></div></header>
+<main><section class="gamebox"><canvas id="game" width="900" height="600" aria-label="محیط پیکسلی کارگاه"></canvas><div class="controls"><div class="pad"><button class="up" data-move="up">▲</button><button class="left" data-move="left">◀</button><button class="down" data-move="down">▼</button><button class="right" data-move="right">▶</button></div><button class="interact" id="interact">تعامل</button></div><p class="hint">با کلیدهای جهت‌دار یا دکمه‌های حرکت برو کنار میزها و مشتری‌ها.</p></section>
+<aside class="side"><h2>📋 کارگاه و سفارش‌ها</h2><div class="weapon"><strong id="weaponName">پیستول ساده</strong><small id="weaponInfo">مدل آغازین • طرح پایه</small><div class="actions"><button id="customize">🎨 تغییر ظاهر</button><button class="secondary" id="sell">💰 فروش به بات</button></div></div><div class="weapon"><strong>🛒 فروشگاه مدل‌ها</strong><small>مدل بعدی با درآمد فروش باز می‌شود.</small><div class="actions"><button id="buy">خرید AK نمایشی — 250 سکه</button></div></div><div class="weapon"><strong>🎨 تزئینات ظاهری</strong><div class="actions"><button class="secondary" data-skin="آبی">آبی</button><button class="secondary" data-skin="قرمز">قرمز</button><button class="secondary" data-skin="طلایی">طلایی (۴۰)</button><button class="secondary" data-skin="نئونی">نئونی (۶۰)</button></div></div><div class="log" id="log">به کارگاه خوش آمدی! کنار میز برو و ظاهر مدل نمایشی‌ات را تغییر بده.</div><button class="secondary" id="reset">شروع دوباره</button></aside></main>
 <script>
-let coins=Number(localStorage.coins||250),sold=Number(localStorage.sold||0),rep=Number(localStorage.rep||0),color='#35a7c8',sticker=false,shine=false;
-function draw(){document.getElementById('coins').textContent=coins;document.getElementById('sold').textContent=sold;document.getElementById('rep').textContent=rep;document.getElementById('bot').style.setProperty('--paint',color);document.getElementById('bot').style.borderColor=shine?'#ffe58a':'#d5e8f4';document.getElementById('bot').textContent=sticker?'★':'';document.getElementById('sticker').disabled=sticker;document.getElementById('shine').disabled=shine;localStorage.coins=coins;localStorage.sold=sold;localStorage.rep=rep}
-function say(t){document.getElementById('msg').textContent=t}
-function paint(c,n){color=c;say('رنگ '+n+' انتخاب شد.');draw()}
-function buySticker(){if(coins<40)return say('سکه کافی نداری!');coins-=40;sticker=true;say('برچسب ستاره‌ای خریداری شد!');draw()}
-function buyShine(){if(coins<70)return say('سکه کافی نداری!');coins-=70;shine=true;say('قاب درخشان خریداری شد!');draw()}
-function sell(){let bonus=(sticker||shine)?80:0;let earn=100+bonus;coins+=earn;sold++;rep+=10;sticker=false;shine=false;say('فروخته شد! '+earn+' سکه گرفتی.');draw()}
-draw();
+(()=>{const c=document.getElementById('game'),ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;
+let coins=180,sales=0,rep=0,hasAK=false,skin='آبی',x=450,y=390,face=1,keys={},near='';const $=id=>document.getElementById(id);
+const colors={آبی:'#53b8ed',قرمز:'#ef6262',طلایی:'#f6c453',نئونی:'#a7f36b'};
+function say(t){$('log').textContent=t;ui()}function ui(){$('coins').textContent=coins;$('sales').textContent=sales;$('rep').textContent=rep;$('weaponName').textContent=hasAK?'AK نمایشی':'پیستول ساده';$('weaponInfo').textContent=(hasAK?'مدل پیشرفته باز شده':'مدل آغازین')+' • پوسته '+skin;$('buy').disabled=hasAK||coins<250;$('buy').textContent=hasAK?'AK خریداری شده':'خرید AK نمایشی — 250 سکه'}
+function rect(x,y,w,h,col){ctx.fillStyle=col;ctx.fillRect(x,y,w,h)}
+function text(t,x,y,size=18,col='#fff'){ctx.font='bold '+size+'px monospace';ctx.fillStyle=col;ctx.fillText(t,x,y)}
+function draw(){ctx.clearRect(0,0,900,600);rect(0,0,900,600,'#688c61');
+for(let i=0;i<900;i+=48)for(let j=0;j<600;j+=48){rect(i+2,j+2,2,2,'#789b6c');rect(i+25,j+30,3,2,'#587b52')}
+rect(35,35,830,530,'#8c7656');rect(45,45,810,510,'#a78a62');for(let i=55;i<850;i+=32){rect(i,50,2,490,'#987c59')}
+rect(75,90,225,100,'#3c5263');rect(83,98,209,84,'#597487');text('میز طراحی',105,125,18);rect(120,145,130,20,colors[skin]);rect(365,85,175,95,'#415b68');text('قفسه مدل‌ها',380,120,17);rect(390,140,120,17,'#d2b36a');
+rect(650,95,165,110,'#795b43');rect(660,105,145,90,'#9d7954');text('صندوق فروش',675,140,17);rect(700,155,60,20,'#d5b65f');
+rect(80,390,180,90,'#455b6b');text('درِ کارگاه',105,435,18);rect(610,390,205,105,'#495e50');text('محل مشتری',645,430,18);
+ // weapon display icons are fictional cosmetic game props only
+rect(150,155,72,8,colors[skin]);rect(170,147,28,8,'#26313b');rect(180,163,12,13,'#26313b');
+rect(420,145,78,8,'#303d48');rect(440,137,24,8,colors[skin]);rect(450,153,12,12,'#303d48');
+ // bot customer
+rect(710,300,28,30,'#e9c65d');rect(704,288,40,18,'#e9c65d');rect(712,295,5,5,'#26313b');rect(730,295,5,5,'#26313b');rect(716,330,7,22,'#465d88');rect(732,330,7,22,'#465d88');text('بات مشتری',680,275,14,'#fff');
+ // player pixel person
+rect(x-12,y-22,24,24,'#f0bd91');rect(x-14,y-25,28,10,'#45352f');rect(x-10,y-5,20,24,'#3978c9');rect(x-10,y+17,7,15,'#26313b');rect(x+3,y+17,7,15,'#26313b');rect(x-17,y-1,7,17,'#f0bd91');rect(x+10,y-1,7,17,'#f0bd91');
+if(Math.abs(x-185)<100&&Math.abs(y-160)<85)near='میز طراحی';else if(Math.abs(x-710)<95&&Math.abs(y-315)<90)near='مشتری';else near='';
+if(near){rect(330,520,240,35,'#172438');text('تعامل: '+near,350,544,17,'#ffe08a')}
+}
+function move(dx,dy){x=Math.max(65,Math.min(835,x+dx));y=Math.max(70,Math.min(520,y+dy));if(dx)face=dx>0?1:-1;draw()}
+function action(){if(near==='میز طراحی')say('از بخش تزئینات، رنگ دلخواهت را انتخاب کن. تغییرات فقط ظاهری هستند.');else if(near==='مشتری')sell();else say('نزدیک میز طراحی یا مشتری برو تا تعامل کنی.')}
+function sell(){let price=hasAK?150:85;price+=skin==='طلایی'?25:skin==='نئونی'?35:0;coins+=price;sales++;rep+=2;say('بات مشتری طرح '+skin+' را خرید! '+price+' سکه گرفتی.');}
+$('interact').onclick=action;$('customize').onclick=()=>say('یکی از رنگ‌های تزئینی پایین را انتخاب کن.');$('sell').onclick=sell;
+document.querySelectorAll('[data-skin]').forEach(b=>b.onclick=()=>{let s=b.dataset.skin,cost=s==='طلایی'?40:s==='نئونی'?60:0;if(coins<cost){say('سکه کافی نداری!');return}coins-=cost;skin=s;say('ظاهر نمایشی به رنگ '+s+' تغییر کرد!');draw()});
+$('buy').onclick=()=>{if(!hasAK&&coins>=250){coins-=250;hasAK=true;say('تبریک! مدل AK نمایشی آزاد شد. حالا ظاهرش را تزئین کن و بفروش.')}ui()};
+$('reset').onclick=()=>{coins=180;sales=0;rep=0;hasAK=false;skin='آبی';x=450;y=390;say('بازی از اول شروع شد.');draw()};
+document.addEventListener('keydown',e=>{let d={ArrowUp:[0,-12],w:[0,-12],ArrowDown:[0,12],s:[0,12],ArrowLeft:[-12,0],a:[-12,0],ArrowRight:[12,0],d:[12,0]}[e.key];if(d){e.preventDefault();move(...d)}if(e.key===' '||e.key==='Enter')action()});
+document.querySelectorAll('[data-move]').forEach(b=>{let m={up:[0,-12],down:[0,12],left:[-12,0],right:[12,0]},id=b.dataset.move;let timer;const start=e=>{e.preventDefault();move(...m[id]);timer=setInterval(()=>move(...m[id]),110)},stop=()=>clearInterval(timer);b.addEventListener('pointerdown',start);['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,stop))});
+ui();draw();})();
 </script></body></html>
