@@ -1,0 +1,11 @@
+; GunFactory - Godot 4 project
+config_version=5
+
+[application]
+config/name="GunFactory"
+run/main_scene="res://Main.tscn"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
