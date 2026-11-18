@@ -3,8 +3,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
 *{box-sizing:border-box}body{margin:0;background:#0b1220;color:#f4f7ff;font-family:Vazirmatn,Tahoma,sans-serif}header{padding:14px 4%;background:linear-gradient(100deg,#1b2d49,#263d5d);border-bottom:2px solid #496486;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}h1{margin:0;font-size:20px;color:#ffe08a}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#14243a;border:1px solid #55708e;padding:6px 12px;border-radius:9px;font-weight:900}main{max-width:1180px;margin:auto;padding:16px}.head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0}.head h2{font-size:18px;color:#a9d5ff;margin:0}.muted{font-size:12px;color:#aebed1}.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:14px}.panel{background:#17263b;border:1px solid #354e6c;border-radius:14px;padding:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}.card{background:#21344d;border:2px solid #3c5878;border-radius:12px;padding:9px;min-width:0}.card.selected{border-color:#ffdc77;box-shadow:0 0 0 2px #ffdc7726}.art{height:95px;border-radius:9px;background:radial-gradient(ellipse at center,#476481,#192b42 72%);display:grid;place-items:center;margin-bottom:8px;overflow:hidden}.weapon{position:relative;width:125px;height:60px;--skin:#43a6d8;filter:drop-shadow(0 5px 2px #0008)}.weapon .stock{position:absolute;left:1px;top:24px;width:26px;height:17px;background:var(--skin);border:3px solid #152337;border-radius:4px 2px 2px 4px}.weapon .core{position:absolute;left:23px;top:20px;width:69px;height:23px;background:var(--skin);border:3px solid #152337;border-radius:5px}.weapon .top{position:absolute;left:34px;top:12px;width:40px;height:9px;background:var(--accent,#d5e1ed);border:2px solid #152337;border-radius:3px}.weapon .front{position:absolute;left:88px;top:26px;width:34px;height:10px;background:#9aabba;border:3px solid #152337;border-radius:2px}.weapon .grip{position:absolute;left:49px;top:39px;width:15px;height:18px;background:var(--skin);border:3px solid #152337;transform:skew(-13deg);border-radius:2px}.weapon .mark{position:absolute;left:58px;top:27px;width:15px;height:5px;background:var(--accent,#fff);border-radius:2px}.weapon:before{content:'';position:absolute;left:36px;top:7px;width:38px;height:4px;background:#b9c7d5;border:1px solid #142236;border-radius:2px}.weapon:after{content:'';position:absolute;left:78px;top:19px;width:8px;height:5px;background:#d5e0e9;border:1px solid #142236;border-radius:2px}.weapon.rifle .stock{width:30px;height:21px;top:21px;clip-path:polygon(0 0,100% 15%,85% 100%,0 85%)}.weapon.rifle .core{width:70px;height:21px;top:20px}.weapon.rifle .front{width:34px;height:8px;top:26px}.weapon.smg .stock{width:18px;height:12px;top:24px}.weapon.smg .front{width:24px;left:90px}.weapon.sniper .stock{width:34px;height:19px;top:21px}.weapon.sniper .front{width:45px;left:78px;height:7px}.weapon.shot .core{height:25px;top:18px}.weapon.shot .front{width:39px;left:86px;height:12px;top:24px}.weapon.pistol .stock{display:none}.weapon.pistol .core{left:12px;top:22px;width:74px;height:17px}.weapon.pistol .front{left:82px;top:26px;width:29px;height:7px}.weapon.pistol .grip{left:43px;top:36px;width:17px;height:20px}.weapon.pistol{transform:scale(.82)}.weapon.smg .stock{width:17px}.weapon.sniper .front{width:48px;left:75px}.weapon.shot .front{width:41px}.name{font-weight:900;font-size:13px}.desc{font-size:11px;color:#b9c9dc;min-height:28px}button{font:700 12px Vazirmatn,Tahoma;border:0;border-radius:8px;padding:9px 10px;background:#ffda78;color:#1b2635;cursor:pointer;margin-top:7px}button.secondary{background:#3d5b7c;color:white}button:disabled{opacity:.42;cursor:not-allowed}.card button{width:100%}.preview{height:175px;background:radial-gradient(ellipse,#3c5d7e,#17263b 70%);border-radius:12px;display:grid;place-items:center;margin:10px 0}.preview .weapon{transform:scale(1.75)}.tabs,.choices,.actions{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}.tabs button{flex:1;min-width:80px}.tabs button.active{background:#a9d5ff}.choice{border:1px solid #526d8d;background:#263d59;color:white;padding:7px 10px;border-radius:8px;font-size:12px;cursor:pointer}.choice.active{border:2px solid #ffdc77;background:#3b5674}.swatch{width:29px;height:29px;border-radius:50%;border:3px solid #dbe5ef;cursor:pointer}.actions button{flex:1;min-width:115px}.message{min-height:24px;color:#8de3b9;font-size:12px;margin-top:7px}.sectionlabel{font-size:13px;color:#d8e7f7;margin-top:10px}.note{font-size:11px;color:#9eafc4;line-height:1.8;margin-top:12px}
 @media(max-width:800px){.layout{grid-template-columns:1fr}}@media(max-width:440px){main{padding:9px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:17px}.preview{height:145px}}
+
+/* ارتقای هنری مدل‌ها: جزئیات صرفاً گرافیکی و تزئینی */
+.weapon{height:64px;transform-origin:center;isolation:isolate}
+.weapon .stock{background:linear-gradient(145deg,#dce5ed22,var(--skin) 35%,#101d2b 120%);box-shadow:inset 0 2px 2px #ffffff55,inset 0 -3px 3px #0008}
+.weapon .core{background:linear-gradient(180deg,#f7fbff55 0%,var(--skin) 28%,#26384a 100%);box-shadow:inset 0 2px 2px #ffffff66,inset 0 -3px 3px #0009,0 1px 0 #ffffff33}
+.weapon .top{background:linear-gradient(180deg,#eef5fc,#71869b 45%,#26384a);box-shadow:0 2px 0 #0a1522}
+.weapon .front{background:linear-gradient(180deg,#dce6ee,#647b90 55%,#1a2939);box-shadow:inset 0 2px 2px #fff8}
+.weapon .grip{background:repeating-linear-gradient(135deg,#172536 0 3px,#344b61 3px 5px);box-shadow:inset 0 1px 2px #fff5}
+.weapon .mark{height:4px;box-shadow:0 0 4px var(--accent)}
+.weapon.rifle .core{border-radius:4px 8px 5px 4px}
+.weapon.rifle .stock{clip-path:polygon(0 8%,72% 8%,100% 28%,86% 100%,15% 91%)}
+.weapon.rifle .top{width:46px;left:39px;height:11px}
+.weapon.rifle .grip{height:21px;top:38px;clip-path:polygon(0 0,100% 0,82% 100%,18% 100%)}
+.weapon.smg .core{border-radius:7px 5px 5px 7px}
+.weapon.smg .stock{clip-path:polygon(0 10%,100% 0,90% 100%,0 90%)}
+.weapon.smg .top{width:28px;left:42px}
+.weapon.sniper .core{height:19px;top:21px;border-radius:3px}
+.weapon.sniper .top{width:55px;left:35px;top:7px;height:12px;border-radius:7px}
+.weapon.sniper .front{height:6px;top:27px}
+.weapon.sniper .stock{width:36px;clip-path:polygon(0 0,100% 12%,82% 100%,0 85%)}
+.weapon.shot .core{height:23px;top:20px;border-radius:8px}
+.weapon.shot .top{display:none}
+.weapon.shot .front{height:11px;top:24px;border-radius:7px}
+.weapon.pistol .core{background:linear-gradient(180deg,#ffffff66,var(--skin) 30%,#17283b)}
+.weapon.pistol .top{width:42px;left:25px;top:15px;height:7px}
+.weapon.pistol .front{border-radius:2px 6px 6px 2px}
+.weapon:before{height:5px;background:linear-gradient(#f5f8fc,#70869a);box-shadow:0 1px 2px #000}
+.weapon:after{height:6px;background:linear-gradient(#dce8f3,#526a80)}
+.weapon[data-pattern="خطوط هندسی"] .core{background:repeating-linear-gradient(135deg,var(--skin) 0 7px,#ffffff44 7px 9px)}
+.weapon[data-pattern="شطرنجی"] .core{background:repeating-conic-gradient(var(--skin) 0 25%,#ffffff55 0 50%) 0/12px 12px}
+.weapon[data-pattern="کهکشانی"] .core{background:radial-gradient(circle at 30% 40%,#fff 0 1px,transparent 2px),linear-gradient(120deg,#412c77,var(--skin),#162a50)}
+.weapon[data-pattern="موجی"] .core{background:repeating-linear-gradient(0deg,var(--skin) 0 5px,#ffffff44 5px 7px)}
+.weapon[data-pattern="پیکسلی"] .core{background:repeating-linear-gradient(90deg,var(--skin) 0 7px,#ffffff44 7px 11px)}
+.weapon[data-pattern="استتار خیالی"] .core{background:repeating-linear-gradient(135deg,#345b50 0 8px,var(--skin) 8px 15px,#1c3441 15px 22px)}
+.weapon[data-pattern="طلسمی"] .core{background:linear-gradient(90deg,#2b1e45,var(--skin),#4b2d6e)}
+
 </style></head><body>
-<header><h1>🎨 کارگاه گان | کلکسیون و اسکین</h1><div class="stats"><span class="pill">🪙 <b id="coins">900</b></span><span class="pill">📦 فروش: <b id="sales">0</b></span><span class="pill">🎖️ طرح‌ها: <b id="designs">0</b></span></div></header>
+<header><h1>🎨 کارگاه گان | کلکسیون و اسکین</h1><div class="stats"><span class="pill">🪙 <b id="coins">250</b></span><span class="pill">📦 فروش: <b id="sales">0</b></span><span class="pill">🎖️ طرح‌ها: <b id="designs">0</b></span></div></header>
 <main><div class="head"><h2>🗃️ کلکسیون گان‌ها</h2><span class="muted">مدل‌های نمایشی با ظاهرهای قابل انتخاب</span></div><div class="layout"><section class="panel"><div class="grid" id="catalog"></div></section>
 <section class="panel"><div class="head"><h2>✨ استودیوی شخصی‌سازی</h2><span class="pill" id="chosenName">پیستول</span></div><div class="preview"><div class="weapon" id="preview"><i class="stock"></i><i class="core"></i><i class="top"></i><i class="front"></i><i class="grip"></i><i class="mark"></i></div></div>
 <div class="sectionlabel">۱. رنگ اسکین</div><div class="choices" id="colors"></div>
