@@ -1,8 +1,8 @@
-; GunFactory - Godot 4 project
+; Robot Workshop - Godot 4 project
 config_version=5
 
 [application]
-config/name="GunFactory"
+config/name="Robot Workshop"
 run/main_scene="res://Main.tscn"
 
 [rendering]
